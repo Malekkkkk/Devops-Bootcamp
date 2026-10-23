@@ -1,0 +1,21 @@
+name: test
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npx playwright install --with-deps chromium
+      - name: Build and check index.html is up to date
+        run: |
+          node scripts/build.mjs
+          git diff --exit-code index.html || (echo "index.html is stale: run npm run build and commit it" && exit 1)
+      - run: node tests/e2e.mjs

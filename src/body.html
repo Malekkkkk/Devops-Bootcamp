@@ -1,0 +1,33 @@
+<div class="app">
+  <header class="top">
+    <div class="brand"><span class="mark">#</span>Root Access</div>
+    <button class="ghost" id="mapBtn" type="button">Course map</button>
+    <div class="meter"><span id="meterText">0 cleared</span><div class="bar"><i id="meterFill"></i></div></div>
+  </header>
+  <aside class="rail" id="rail" aria-label="Course map"></aside>
+  <section class="lesson" id="lesson" aria-live="polite"></section>
+  <section class="term" aria-label="Terminal">
+    <div class="tbar"><span class="dots"><i></i><i></i><i></i></span><span class="sp" id="termTitle"></span><button type="button" id="resetBtn">Reset lab</button></div>
+    <div class="screen" id="screen">
+      <div id="out"></div>
+      <form class="inrow" id="form" autocomplete="off"><span class="pr" id="prompt"></span><input id="cmd" aria-label="Command" autocomplete="off" autocapitalize="off" autocorrect="off" spellcheck="false"></form>
+    </div>
+  </section>
+</div>
+
+<div class="ov" id="edOv" hidden>
+  <div class="ed" role="dialog" aria-label="Text editor">
+    <div class="eh"><span>GNU nano 7.2</span><span id="edName"></span><span id="edMod"></span></div>
+    <textarea id="edText" spellcheck="false" autocapitalize="off" autocorrect="off" aria-label="File contents"></textarea>
+    <div class="es" id="edStatus"></div>
+    <div class="ef"><span><kbd>^S</kbd> Save</span><span><kbd>^X</kbd> Exit</span><span><kbd>Tab</kbd> 2 spaces</span><button type="button" class="sec2" id="edExit">Exit</button><button type="button" id="edSave">Save</button></div>
+  </div>
+</div>
+
+<div class="ov" id="dvOv" hidden>
+  <div class="dv" role="dialog" aria-label="Dashboard">
+    <header><h2 id="dvTitle"></h2><span class="eyebrow" id="dvSub">Last 30 minutes · 1m step</span><button class="ghost" id="dvClose" type="button">Close</button></header>
+    <div class="dgrid" id="dvGrid"></div>
+  </div>
+</div>
+<div class="toast" id="toast"></div>
